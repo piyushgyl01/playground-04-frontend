@@ -45,7 +45,7 @@ export default function AddInventory() {
         setTimeout(() => {
           setShowToast(false);
         }, 3000);
-        // navigate("/inventory")
+        navigate("/inventory")
       } else {
         setToastMessage("Item added successfully");
         setShowToast(true);
