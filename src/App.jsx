@@ -4,7 +4,7 @@ export default function App() {
   return (
     <>
       <main className="container">
-        <section className="p-4 bg-success text-light">
+        <section className="p-4 my-5 rounded bg-success text-light">
           <h1>Welcome to Inventory Management</h1>
           <p>
             Efficiently manage your invetory with our simple inventory

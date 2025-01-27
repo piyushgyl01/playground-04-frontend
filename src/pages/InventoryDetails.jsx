@@ -26,6 +26,12 @@ export default function InventoryDetails() {
 
   //EDIT HANDLER FUNCTION
   const handleEdit = async () => {
+    if (!editedData.itemName || !editedData.quantity || !editedData.category) {
+      setToastMessage("All fields are required");
+      setShowToast(true);
+      return;
+    }
+
     try {
       const response = await fetch(
         `https://playground-04-backend.vercel.app/api/update-inventory/${itemID}`,
@@ -44,9 +50,9 @@ export default function InventoryDetails() {
         setToastMessage("Item edited successfully");
         setTimeout(() => setToast(false), 3000);
         setEditedData({
-          name: "",
-          title: "",
-          department: "",
+          itemName: "",
+          quantity: "",
+          category: "",
         });
         setShowEdit(false);
       } else {
