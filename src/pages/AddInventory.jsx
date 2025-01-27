@@ -1,8 +1,12 @@
+import { useState } from "react";
 import { useNavigate } from "react-router";
 
 export default function AddInventory() {
+  //NAVIGATE
   const navigate = useNavigate();
 
+  //STATES
+  const [postedData, setPostedData] = useState({})
   return (
     <>
       <main className="container my-5">
@@ -33,7 +37,6 @@ export default function AddInventory() {
             <option value="Non-Perishable">Non-Perishable</option>
           </select>
         </div>
-
         <button className="btn btn-primary mt-3">Add to Inventory</button>
       </main>
     </>

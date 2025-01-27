@@ -21,6 +21,12 @@ export default function Inventory() {
 
   //HANDLE DELETE FUNCTION
   const handleDelete = async (id) => {
+    if (!editedData.name || !editedData.title || !editedData.department) {
+      setToastMessage("All fields are required");
+      setToast(true);
+      return;
+    }
+
     try {
       const response = await fetch(
         `https://playground-04-backend.vercel.app/api/delete-inventory/${id}`,
@@ -67,13 +73,14 @@ export default function Inventory() {
               <button
                 type="button"
                 className="btn-close"
-                onClick={() => setToast(false)}
+                onClick={() => setShowToast(false)}
               ></button>
             </div>
             <div className="toast-body">{toastMessage}</div>
           </div>
         </div>
       )}
+
       <main className="my-5 container">
         <h1 className="text-center">Item List</h1>
 
